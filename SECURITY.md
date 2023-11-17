@@ -1,7 +1,7 @@
 # Security Policy
 
-This security policy applies to the "core" crates in the rust-bitcoin ecosystem, which are
-`bitcoin`, `secp256k1`, `bitcoin_hashes` and `bitcoin-internals`. These crates deal with
+This security policy applies to the "core" crates in the rust-litecoin ecosystem, which are
+`litecoin`, `secp256k1`, `litecoin_hashes` and `litecoin-internals`. These crates deal with
 cryptography and cryptographic algorithms, and as such, are likely locations for security
 vulnerabilities to crop up.
 
@@ -16,7 +16,7 @@ In general, use your best judgement in determining whether an issue is a securit
 go ahead and post it to the public issue tracker.
 
 **If you believe you are aware of a security issue**, please contact Andrew Poelstra at
-`rust-bitcoin-security@wpsoftware.net`. You may GPG-encrypt this email to his public key, which
+`rust-litecoin-security@wpsoftware.net`. You may GPG-encrypt this email to his public key, which
 [can be downloaded from his website here](https://wpsoftware.net/andrew/andrew.gpg) or which is
 listed in full below.
 

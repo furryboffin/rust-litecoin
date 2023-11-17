@@ -2,38 +2,38 @@
 
 The main improvement in this version is removal of the `hex` module in favour of the new
 [`hex-conservative`](https://crates.io/crates/hex-conservative) crate (which we wrote). We also
-bumped the Minimum Supported Rust Version across the `rust-bitcoin` ecosystem to v1.48
+bumped the Minimum Supported Rust Version across the `rust-litecoin` ecosystem to v1.48
 
-* Bump MSRV to 1.48.0 [#1729](https://github.com/rust-bitcoin/rust-bitcoin/pull/1729).
-* Depend on new `hex-conservative` crate and remove `hex` module [#1883](https://github.com/rust-bitcoin/rust-bitcoin/pull/1833).
-* Make `sha256t_hash_newtype!` evocative of the output [#1773](https://github.com/rust-bitcoin/rust-bitcoin/pull/1773).
-* Implement computing SHA256 in const context [#1769](https://github.com/rust-bitcoin/rust-bitcoin/pull/1769).
-* Add `from_bytes_ref` and `from_bytes_mut` to all hash types [#1761](https://github.com/rust-bitcoin/rust-bitcoin/pull/1761).
-* Rename `crate::Error` to `crate::FromSliceError` [#1873](https://github.com/rust-bitcoin/rust-bitcoin/pull/1873).
-* Add simd sha256 intrinsics for x86 machines [#1962](https://github.com/rust-bitcoin/rust-bitcoin/pull/1962).
-* Introduce the "small-hash" feature for `bitcoin_hashes` [#1990](https://github.com/rust-bitcoin/rust-bitcoin/pull/1990).
+* Bump MSRV to 1.48.0 [#1729](https://github.com/rust-litecoin/rust-litecoin/pull/1729).
+* Depend on new `hex-conservative` crate and remove `hex` module [#1883](https://github.com/rust-litecoin/rust-litecoin/pull/1833).
+* Make `sha256t_hash_newtype!` evocative of the output [#1773](https://github.com/rust-litecoin/rust-litecoin/pull/1773).
+* Implement computing SHA256 in const context [#1769](https://github.com/rust-litecoin/rust-litecoin/pull/1769).
+* Add `from_bytes_ref` and `from_bytes_mut` to all hash types [#1761](https://github.com/rust-litecoin/rust-litecoin/pull/1761).
+* Rename `crate::Error` to `crate::FromSliceError` [#1873](https://github.com/rust-litecoin/rust-litecoin/pull/1873).
+* Add simd sha256 intrinsics for x86 machines [#1962](https://github.com/rust-litecoin/rust-litecoin/pull/1962).
+* Introduce the "small-hash" feature for `litecoin_hashes` [#1990](https://github.com/rust-litecoin/rust-litecoin/pull/1990).
 
 # 0.12.0 - 2023-03-05
 
-0.12 is a significant release. We pulled the repository into the rust-bitcoin
+0.12 is a significant release. We pulled the repository into the rust-litecoin
 repo to improve our integration testing and to get more eyes on this crate. We
 began the process of replacing the hex functionality in this crate with a more
 performant, dedicated crate, and otherwise cleaning up the API as we look forward
 to 1.0.
 
-* [Remove `FromHex` implementation](https://github.com/rust-bitcoin/rust-bitcoin/pull/1565/commits/a308e1e2ea5c6ae419d961b8da71cc8a35a92715)
+* [Remove `FromHex` implementation](https://github.com/rust-litecoin/rust-litecoin/pull/1565/commits/a308e1e2ea5c6ae419d961b8da71cc8a35a92715)
 from all hashes and implement `FromStr` instead.
-* Move crate from [original repo](https://github.com/rust-bitcoin/bitcoin_hashes) to the
-`rust-bitcoin` repository. Commit history was lost during move, for commit history see the original
-repository. Tip of bitcoin_hashes:master at time of import: 54c16249e06cc6b7870c7fc07d90f489d82647c7
-* [Remove `Deref` impls for all hashes](https://github.com/rust-bitcoin/rust-bitcoin/pull/1450)
-* [Add `AsRef` impls for all hashes from fixed-size arrays](https://github.com/rust-bitcoin/rust-bitcoin/pull/1593)
-* [Add the `sha512_256` hash](https://github.com/rust-bitcoin/rust-bitcoin/pull/1413)
-* [Remove the `ToHex` trait in favor of `DisplayHex` and `fmt::Display`](https://github.com/rust-bitcoin/rust-bitcoin/pull/1531)
-* [Remove the now-unused `HexWriter` object](https://github.com/rust-bitcoin/rust-bitcoin/pull/1572)
-* [nostd: `alloc` feature no longer enables `core2`](https://github.com/rust-bitcoin/rust-bitcoin/pull/1612)
-* [Rewrite `hash_newtype` macro with new syntax](https://github.com/rust-bitcoin/rust-bitcoin/pull/1659)
-* [Rename `Hash::Inner` to `Hash::Bytes`, 'Hash::*_inner` and several related conversion methods](https://github.com/rust-bitcoin/rust-bitcoin/pull/1577)
+* Move crate from [original repo](https://github.com/rust-litecoin/litecoin_hashes) to the
+`rust-litecoin` repository. Commit history was lost during move, for commit history see the original
+repository. Tip of litecoin_hashes:master at time of import: 54c16249e06cc6b7870c7fc07d90f489d82647c7
+* [Remove `Deref` impls for all hashes](https://github.com/rust-litecoin/rust-litecoin/pull/1450)
+* [Add `AsRef` impls for all hashes from fixed-size arrays](https://github.com/rust-litecoin/rust-litecoin/pull/1593)
+* [Add the `sha512_256` hash](https://github.com/rust-litecoin/rust-litecoin/pull/1413)
+* [Remove the `ToHex` trait in favor of `DisplayHex` and `fmt::Display`](https://github.com/rust-litecoin/rust-litecoin/pull/1531)
+* [Remove the now-unused `HexWriter` object](https://github.com/rust-litecoin/rust-litecoin/pull/1572)
+* [nostd: `alloc` feature no longer enables `core2`](https://github.com/rust-litecoin/rust-litecoin/pull/1612)
+* [Rewrite `hash_newtype` macro with new syntax](https://github.com/rust-litecoin/rust-litecoin/pull/1659)
+* [Rename `Hash::Inner` to `Hash::Bytes`, 'Hash::*_inner` and several related conversion methods](https://github.com/rust-litecoin/rust-litecoin/pull/1577)
 
 
 # 0.11.0 - 2022-06-25
@@ -45,22 +45,22 @@ decoding hex strings.
 
 ## Breaking changes
 
-* [Enable edition 2018 and bump MSRV to Rust 1.41.1](https://github.com/rust-bitcoin/bitcoin_hashes/pull/136)
+* [Enable edition 2018 and bump MSRV to Rust 1.41.1](https://github.com/rust-litecoin/litecoin_hashes/pull/136)
 
 ## New features/APIs
 
-* [Add `all_zeros` to `Hash` trait](https://github.com/rust-bitcoin/bitcoin_hashes/pull/148)
-* [Implement `Write` on `HmacEngine`](https://github.com/rust-bitcoin/bitcoin_hashes/pull/133)
-* [Introduce `HexWriter`](https://github.com/rust-bitcoin/bitcoin_hashes/pull/156), makes serialising hex faster
-* [Implement `Read` on `HexIterator`](https://github.com/rust-bitcoin/bitcoin_hashes/pull/135), makes deserialising hex faster
+* [Add `all_zeros` to `Hash` trait](https://github.com/rust-litecoin/litecoin_hashes/pull/148)
+* [Implement `Write` on `HmacEngine`](https://github.com/rust-litecoin/litecoin_hashes/pull/133)
+* [Introduce `HexWriter`](https://github.com/rust-litecoin/litecoin_hashes/pull/156), makes serialising hex faster
+* [Implement `Read` on `HexIterator`](https://github.com/rust-litecoin/litecoin_hashes/pull/135), makes deserialising hex faster
 
 ## Other improvements
 
-* Use `rotate_left` [instead of custom macro](https://github.com/rust-bitcoin/bitcoin_hashes/pull/162)
-* [Enable clippy on CI](https://github.com/rust-bitcoin/bitcoin_hashes/pull/152)
+* Use `rotate_left` [instead of custom macro](https://github.com/rust-litecoin/litecoin_hashes/pull/162)
+* [Enable clippy on CI](https://github.com/rust-litecoin/litecoin_hashes/pull/152)
 * Various docs fixes
-* [Improve feature test coverage](https://github.com/rust-bitcoin/bitcoin_hashes/pull/147)
-* [Add a disabled `rustfmt.toml`](https://github.com/rust-bitcoin/bitcoin_hashes/pull/141) to improve interaction with auto-formatting in editors
+* [Improve feature test coverage](https://github.com/rust-litecoin/litecoin_hashes/pull/147)
+* [Add a disabled `rustfmt.toml`](https://github.com/rust-litecoin/litecoin_hashes/pull/141) to improve interaction with auto-formatting in editors
 
 
 # 0.10.0 - 2021-07-05
@@ -77,10 +77,10 @@ decoding hex strings.
 
 # 0.9.5 - 2021-04-28
 
-* Add [`#[repr(transparent)]` to all newtype wrappers](https://github.com/rust-bitcoin/bitcoin_hashes/pull/108/)
-* Add [missing `#derive`s](https://github.com/rust-bitcoin/bitcoin_hashes/pull/110/)
-* Replace `fuzztarget` feature with [use of `cfg(fuzzing)`](https://github.com/rust-bitcoin/bitcoin_hashes/pull/111/)
-* Use [`core` rather than `std`](https://github.com/rust-bitcoin/bitcoin_hashes/pull/118/) and [fix `no_std` compilation](https://github.com/rust-bitcoin/bitcoin_hashes/pull/122/)
+* Add [`#[repr(transparent)]` to all newtype wrappers](https://github.com/rust-litecoin/litecoin_hashes/pull/108/)
+* Add [missing `#derive`s](https://github.com/rust-litecoin/litecoin_hashes/pull/110/)
+* Replace `fuzztarget` feature with [use of `cfg(fuzzing)`](https://github.com/rust-litecoin/litecoin_hashes/pull/111/)
+* Use [`core` rather than `std`](https://github.com/rust-litecoin/litecoin_hashes/pull/118/) and [fix `no_std` compilation](https://github.com/rust-litecoin/litecoin_hashes/pull/122/)
 
 Note that we have stopped re-exporting the `core` crate when compiling without `std`. This is technically a breaking change but it is hard to imagine what user might be affected.
 
@@ -155,21 +155,21 @@ Note that we have stopped re-exporting the `core` crate when compiling without `
 
 # 0.4.0 - 2019-06-23
 
-* [Add `from_inner` method](https://github.com/rust-bitcoin/bitcoin_hashes/pull/20) to all hashes
-* [Update `FromHex` trait](https://github.com/rust-bitcoin/bitcoin_hashes/pull/40) to require `from_byte_iter` method rather than `from_hex` be implemented
-* Make `Hmac` midstate [an actual HMAC midstate](https://github.com/rust-bitcoin/bitcoin_hashes/pull/43)
-* Allow `Display` [of truncated hashes](https://github.com/rust-bitcoin/bitcoin_hashes/pull/9)
-* Require [using a constructor for `HexIterator`](https://github.com/rust-bitcoin/bitcoin_hashes/pull/44) and then [clean up the internals](https://github.com/rust-bitcoin/bitcoin_hashes/pull/47)
-* [Strongly type `sha256::Midstate`](https://github.com/rust-bitcoin/bitcoin_hashes/pull/39) to allow independent serialization
-* Add [siphash24 module](https://github.com/rust-bitcoin/bitcoin_hashes/pull/46)
+* [Add `from_inner` method](https://github.com/rust-litecoin/litecoin_hashes/pull/20) to all hashes
+* [Update `FromHex` trait](https://github.com/rust-litecoin/litecoin_hashes/pull/40) to require `from_byte_iter` method rather than `from_hex` be implemented
+* Make `Hmac` midstate [an actual HMAC midstate](https://github.com/rust-litecoin/litecoin_hashes/pull/43)
+* Allow `Display` [of truncated hashes](https://github.com/rust-litecoin/litecoin_hashes/pull/9)
+* Require [using a constructor for `HexIterator`](https://github.com/rust-litecoin/litecoin_hashes/pull/44) and then [clean up the internals](https://github.com/rust-litecoin/litecoin_hashes/pull/47)
+* [Strongly type `sha256::Midstate`](https://github.com/rust-litecoin/litecoin_hashes/pull/39) to allow independent serialization
+* Add [siphash24 module](https://github.com/rust-litecoin/litecoin_hashes/pull/46)
 
 # 0.3.2 - 2019-03-20
 
-* Implement the `FromHex` trait on [many more types](https://github.com/rust-bitcoin/bitcoin_hashes/pull/38)
+* Implement the `FromHex` trait on [many more types](https://github.com/rust-litecoin/litecoin_hashes/pull/38)
 
 # 0.3.1 - 2019-03-04
 
-* [Fix serde serialization](https://github.com/rust-bitcoin/bitcoin_hashes/pull/36)
+* [Fix serde serialization](https://github.com/rust-litecoin/litecoin_hashes/pull/36)
 
 # 0.3.0 - 2019-01-23
 

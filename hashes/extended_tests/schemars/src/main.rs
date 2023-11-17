@@ -1,7 +1,7 @@
 fn main() {}
 #[cfg(test)]
 mod tests {
-    use bitcoin_hashes::*;
+    use litecoin_hashes::*;
 
     #[test]
     fn hash160() {

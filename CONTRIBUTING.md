@@ -1,10 +1,10 @@
-# Contributing to rust-bitcoin
+# Contributing to rust-litecoin
 
 :+1::tada: First off, thanks for taking the time to contribute! :tada::+1:
 
-The following is a set of guidelines for contributing to Rust Bitcoin
-implementation and other Rust Bitcoin-related projects, which are hosted in the
-[Rust Bitcoin Community](https://github.com/rust-bitcoin) on GitHub. These are
+The following is a set of guidelines for contributing to Rust Litecoin
+implementation and other Rust Litecoin-related projects, which are hosted in the
+[Rust Litecoin Community](https://github.com/rust-litecoin) on GitHub. These are
 mostly guidelines, not rules. Use your best judgment, and feel free to propose
 changes to this document in a pull request.
 
@@ -31,7 +31,7 @@ changes to this document in a pull request.
 
 ## General
 
-The Rust Bitcoin project operates an open contributor model where anyone is
+The Rust Litecoin project operates an open contributor model where anyone is
 welcome to contribute towards development in the form of peer review,
 documentation, testing and patches.
 
@@ -46,17 +46,17 @@ you'll learn.
 
 ## Communication channels
 
-Communication about Rust Bitcoin happens primarily in
-[#bitcoin-rust](https://web.libera.chat/?channel=#bitcoin-rust) IRC chat on
+Communication about Rust Litecoin happens primarily in
+[#litecoin-rust](https://web.libera.chat/?channel=#litecoin-rust) IRC chat on
 [Libera](https://libera.chat/) with the logs available at
-<https://gnusha.org/bitcoin-rust/> (starting from Jun 2021 and now on) and
-<https://gnusha.org/rust-bitcoin/> (historical archive before Jun 2021).
+<https://gnusha.org/litecoin-rust/> (starting from Jun 2021 and now on) and
+<https://gnusha.org/rust-litecoin/> (historical archive before Jun 2021).
 
 Discussion about code base improvements happens in GitHub issues and on pull
 requests.
 
-Major projects are tracked [here](https://github.com/orgs/rust-bitcoin/projects).
-Major milestones are tracked [here](https://github.com/rust-bitcoin/rust-bitcoin/milestones).
+Major projects are tracked [here](https://github.com/orgs/rust-litecoin/projects).
+Major milestones are tracked [here](https://github.com/rust-litecoin/rust-litecoin/milestones).
 
 
 ## Asking questions
@@ -64,7 +64,7 @@ Major milestones are tracked [here](https://github.com/rust-bitcoin/rust-bitcoin
 > **Note:** Please don't file an issue to ask a question. You'll get faster
 > results by using the resources below.
 
-We have a dedicated developer channel on IRC, #bitcoin-rust@libera.chat where
+We have a dedicated developer channel on IRC, #litecoin-rust@libera.chat where
 you may get helpful advice if you have questions.
 
 
@@ -120,7 +120,7 @@ Prerequisites that a PR must satisfy for merging into the `master` branch:
   code);
 * contain all inline docs for newly introduced API and pass doc tests;
 * be based on the recent `master` tip from the original repository at
-  <https://github.com/rust-bitcoin/rust-bitcoin>.
+  <https://github.com/rust-litecoin/rust-litecoin>.
 
 NB: reviewers may run more complex test/CI scripts, thus, satisfying all the
 requirements above is just a preliminary, but not necessary sufficient step for
@@ -194,12 +194,12 @@ any of the following conditions:
 
 ## Coding conventions
 
-Library reflects Bitcoin Core approach whenever possible.
+Library reflects Litecoin Core approach whenever possible.
 
 ### Naming conventions
 
 Naming of data structures/enums and their fields/variants must follow names used
-in Bitcoin Core, with the following exceptions:
+in Litecoin Core, with the following exceptions:
 - the case should follow Rust standards (i.e. PascalCase for types and
   snake_case for fields and variants);
 - omit `C`-prefixes.
@@ -225,7 +225,7 @@ requirement to test unsafe code with sanitizers including Miri.
 
 ### Policy
 
-We have various `rust-bitcoin` specific coding styles and conventions that are
+We have various `rust-litecoin` specific coding styles and conventions that are
 grouped here loosely under the term 'policy'. These are things we try to adhere
 to but that you should not need to worry too much about if you are a new
 contributor. Think of this as a place to collect group knowledge that exists in
@@ -234,7 +234,7 @@ the various PRs over the last few years.
 #### Import statements
 
 We use the following style for import statements, see
-(https://github.com/rust-bitcoin/rust-bitcoin/discussions/2088) for the discussion that led to this.
+(https://github.com/rust-litecoin/rust-litecoin/discussions/2088) for the discussion that led to this.
 
 ```rust
 
@@ -286,25 +286,25 @@ pub enum Error {
 #### Rustdocs
 
 Be liberal with references to BIPs or other documentation; the aim is that devs can learn about
-Bitcoin by hacking on this codebase as opposed to having to learn about Bitcoin first and then start
+Litecoin by hacking on this codebase as opposed to having to learn about Litecoin first and then start
 hacking on this codebase. Consider the following format, not all sections will be required for all types.
 
 
 ```rust
-/// The Bitcoin foobar.
+/// The Litecoin foobar.
 ///
-/// Contains all the data used when passing a foobar around the Bitcoin network.
+/// Contains all the data used when passing a foobar around the Litecoin network.
 ///
 /// <details>
 /// <summary>FooBar Original Design</summary>
 ///
-/// The foobar was introduced in Bitcoin x.y.z to increase the amount of foo in bar.
+/// The foobar was introduced in Litecoin x.y.z to increase the amount of foo in bar.
 ///
 /// </details>
 ///
 /// ### Relevant BIPs
 ///
-/// * [BIP X - FooBar in Bitcoin](https://github.com/bitcoin/bips/blob/master/bip-0000.mediawiki)
+/// * [BIP X - FooBar in Litecoin](https://github.com/litecoin/bips/blob/master/bip-0000.mediawiki)
 pub struct FooBar {
     /// The version in use.
     pub version: Version
@@ -343,7 +343,7 @@ panics that could theoretically occur because of bugs in our code must not be do
   (see https://rustc-dev-guide.rust-lang.org/backend/implicit-caller-location.html)
 
 - `#[cfg(rust_v_1_60)]`: Used to guard code that should only be built in if the toolchain is
-  compatible. These configuration conditionals are set at build time in `bitcoin/build.rs`. New
+  compatible. These configuration conditionals are set at build time in `litecoin/build.rs`. New
   version attributes may be added as needed.
 
 
@@ -368,7 +368,7 @@ apoelstra@wpsoftware.net, encrypted with his public key from
 
 ## Testing
 
-Related to the security aspect, rust bitcoin developers take testing very
+Related to the security aspect, rust litecoin developers take testing very
 seriously. Due to the modular nature of the project, writing new test cases is
 easy and good test coverage of the codebase is an important goal. Refactoring
 the project to enable fine-grained unit testing is also an ongoing effort.
@@ -380,8 +380,8 @@ the [readme](./README.md) for more information.
 ## Going further
 
 You may be interested in the guide by Jon Atack on
-[How to review Bitcoin Core PRs](https://github.com/jonatack/bitcoin-development/blob/master/how-to-review-bitcoin-core-prs.md)
-and [How to make Bitcoin Core PRs](https://github.com/jonatack/bitcoin-development/blob/master/how-to-make-bitcoin-core-prs.md).
+[How to review Litecoin Core PRs](https://github.com/jonatack/litecoin-development/blob/master/how-to-review-litecoin-core-prs.md)
+and [How to make Litecoin Core PRs](https://github.com/jonatack/litecoin-development/blob/master/how-to-make-litecoin-core-prs.md).
 While there are differences between the projects in terms of context and
 maturity, many of the suggestions offered apply to this project.
 

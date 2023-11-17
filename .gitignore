@@ -1,19 +1,19 @@
-# .gitignore for rust-bitcoin repository workspace.
+# .gitignore for rust-litecoin repository workspace.
 
 # Lock files
 Cargo.lock
 internals/Cargo.lock
-bitcoin/Cargo.lock
+litecoin/Cargo.lock
 hashes/Cargo.lock
 
 # Build artifacts
 target
 internals/target
-bitcoin/target
+litecoin/target
 hashes/target
 
 # Test artifacts
-bitcoin/dep_test
+litecoin/dep_test
 
 # Fuzz artifacts
 hfuzz_target

@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: CC0-1.0
 
-//! # Rust Bitcoin Internal
+//! # Rust Litecoin Internal
 //!
 //! This crate is only meant to be used internally by crates in the
-//! [rust-bitcoin](https://github.com/rust-bitcoin) ecosystem.
+//! [rust-litecoin](https://github.com/rust-litecoin) ecosystem.
 //!
 
 #![no_std]
@@ -12,7 +12,7 @@
 // Coding conventions
 #![warn(missing_docs)]
 // Exclude clippy lints we don't think are valuable
-#![allow(clippy::needless_question_mark)] // https://github.com/rust-bitcoin/rust-bitcoin/pull/2134
+#![allow(clippy::needless_question_mark)] // https://github.com/rust-litecoin/rust-litecoin/pull/2134
 
 #[cfg(feature = "alloc")]
 extern crate alloc;

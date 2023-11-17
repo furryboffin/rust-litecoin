@@ -31,14 +31,14 @@ dependencies = [
 ]
 
 [[package]]
-name = "bitcoin"
+name = "litecoin"
 version = "0.31.0"
 dependencies = [
  "base64",
  "bech32",
  "bincode",
- "bitcoin-internals",
- "bitcoin_hashes",
+ "litecoin-internals",
+ "litecoin_hashes",
  "bitcoinconsensus",
  "core2",
  "hex-conservative",
@@ -52,10 +52,10 @@ dependencies = [
 ]
 
 [[package]]
-name = "bitcoin-fuzz"
+name = "litecoin-fuzz"
 version = "0.0.1"
 dependencies = [
- "bitcoin",
+ "litecoin",
  "honggfuzz",
  "serde",
  "serde_cbor",
@@ -63,14 +63,14 @@ dependencies = [
 ]
 
 [[package]]
-name = "bitcoin-internals"
+name = "litecoin-internals"
 version = "0.2.0"
 dependencies = [
  "serde",
 ]
 
 [[package]]
-name = "bitcoin_hashes"
+name = "litecoin_hashes"
 version = "0.13.0"
 dependencies = [
  "core2",
@@ -348,7 +348,7 @@ version = "0.28.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "2acea373acb8c21ecb5a23741452acd2593ed44ee3d343e72baaa143bc89d0d5"
 dependencies = [
- "bitcoin_hashes",
+ "litecoin_hashes",
  "rand",
  "secp256k1-sys",
  "serde",

@@ -16,17 +16,17 @@ jobs:
       fail-fast: false
       matrix:
         fuzz_target: [
-          bitcoin_deserialize_address,
-          bitcoin_deserialize_amount,
-          bitcoin_deserialize_block,
-          bitcoin_deserialize_prefilled_transaction,
-          bitcoin_deserialize_psbt,
-          bitcoin_deserialize_script,
-          bitcoin_deserialize_transaction,
-          bitcoin_deserialize_witness,
-          bitcoin_deser_net_msg,
-          bitcoin_outpoint_string,
-          bitcoin_script_bytes_to_asm_fmt,
+          litecoin_deserialize_address,
+          litecoin_deserialize_amount,
+          litecoin_deserialize_block,
+          litecoin_deserialize_prefilled_transaction,
+          litecoin_deserialize_psbt,
+          litecoin_deserialize_script,
+          litecoin_deserialize_transaction,
+          litecoin_deserialize_witness,
+          litecoin_deser_net_msg,
+          litecoin_outpoint_string,
+          litecoin_script_bytes_to_asm_fmt,
           hashes_cbor,
           hashes_json,
           hashes_ripemd160,
@@ -52,7 +52,7 @@ jobs:
           toolchain: '1.65.0'
       - name: fuzz
         run: |
-          if [[ "${{ matrix.fuzz_target }}" =~ ^bitcoin ]]; then
+          if [[ "${{ matrix.fuzz_target }}" =~ ^litecoin ]]; then
               export RUSTFLAGS='--cfg=hashes_fuzz --cfg=secp256k1_fuzz'
           fi
           echo "Using RUSTFLAGS $RUSTFLAGS"
