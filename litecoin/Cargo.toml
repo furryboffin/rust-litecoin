@@ -36,11 +36,13 @@ all-features = true
 rustdoc-args = ["--cfg", "docsrs"]
 
 [dependencies]
-internals = { package = "litecoin-internals", version = "0.2.0" }
+# internals = { package = "litecoin-internals", version = "0.2.0" }
+internals = { package = "litecoin-internals", path = "../internals"}
 hex = { package = "hex-conservative", version = "0.1.1", default-features = false }
 altcoin-bech32 = "0.12.1"
 bech32 = { version = "0.10.0-beta", default-features = false }
-hashes = { package = "litecoin_hashes", version = "0.13.0", default-features = false }
+# hashes = { package = "litecoin_hashes", version = "0.13.0", default-features = false }
+hashes = { package = "litecoin_hashes", path = "../hashes"}
 secp256k1 = { version = "0.28.0", default-features = false, features = ["hashes"] }
 hex_lit = "0.1.1"
 

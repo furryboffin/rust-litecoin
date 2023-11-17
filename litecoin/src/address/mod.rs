@@ -101,7 +101,7 @@ impl FromStr for AddressType {
 
 /// The method used to produce an address.
 #[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
-enum Payload {
+pub enum Payload {
     /// P2PKH address.
     PubkeyHash(PubkeyHash),
     /// P2SH address.
