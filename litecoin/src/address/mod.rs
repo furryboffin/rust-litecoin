@@ -223,7 +223,7 @@ impl Payload {
 
     /// Returns a byte slice of the inner program of the payload. If the payload
     /// is a script hash or pubkey hash, a reference to the hash is returned.
-    #[allow(dead_code)]
+    // #[allow(dead_code)]
     fn inner_prog_as_bytes(&self) -> &[u8] {
         match self {
             Payload::ScriptHash(hash) => hash.as_ref(),
